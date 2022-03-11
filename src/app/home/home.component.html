@@ -1,0 +1,43 @@
+<!-- <div class="container-fluid"> -->
+<div class="card bg-dark text-white">
+    <img class="card-img imogi" src="https://images3.alphacoders.com/813/813087.jpg" alt="Card image">
+    <div class="card-img-overlay">      
+      <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text">Last updated 3 mins ago</p> -->
+    </div>
+  </div>
+<div id="Search">
+  <input type="text"  placeholder="Filter Blogs" name="search" [(ngModel)]="search">
+</div>
+    <br>
+    
+
+  <h4 *ngIf="this.arr5.length!=0; else elseBlock" style="text-align: center;">Your Blogs</h4>
+  <ng-template #elseBlock>
+    <p style="text-align: center;" ><i>no blogs</i></p>
+ </ng-template>
+  <!-- <div class="container-fluid"> -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4" >
+        <div class="col mt-3" *ngFor="let card of arr5 | filter:search">
+            <div class="card shadow p-3 mb-5 bg-white rounded" (click)="homeClick(card.id)" style="width: 18rem;">
+            <img class="card-img-top" style="object-fit: cover; width: 260px !important; height: 160px !important;" src="{{card.image}}" alt="Card image cap"[routerLink]="['page',card.id]">
+            <div class="card-body">
+              <h5 class="card-title">{{card.name}}</h5>
+              <p class="card-text">by {{card.email}}</p>
+              <p class="card-text content" >{{ card.content }}</p>
+            </div>
+            <a class="Read-link"  [routerLink]="['page',card.id]">Read more</a>
+            <!-- <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{card.email}}</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul> -->
+            <div class="card-body">
+              
+              <a class="card-link" (click)="likee(card.id)" [ngStyle]="{'text-decoration':'none','color':'black'}"><i class="bi bi-heart" [ngStyle]="{'font-style':'bold'}"> {{card.like}} Like</i></a>
+              <a class="card-link" [routerLink]="['page',card.id]" [ngStyle]="{'text-decoration':'none','color':'black'}"><i class="bi bi-chat"></i> Leave a comment</a>
+            </div>
+          </div>
+        </div>
+        </div>
+    <!-- </div> -->

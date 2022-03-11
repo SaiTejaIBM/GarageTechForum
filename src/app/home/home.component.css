@@ -1,0 +1,27 @@
+.imogi{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+#Search{
+    
+    width: 30%;    
+    margin: auto;
+    padding: 10px !important;
+}
+#Search input{  
+    width: 100%;
+    padding: 6px;
+    border-radius: 1rem;
+}
+.content{
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+.Read-link{
+    text-decoration: none;
+    width: fit-content;
+    margin-left: auto;
+}

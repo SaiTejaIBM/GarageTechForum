@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>display</h1>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">forth</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of arr2">
+            <tr>
+              <th scope="row">{{item.id}}</th>
+              <td>{{item.name}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.image}}</td>
+            </tr>
+          </tbody>
+        </table>
+</div>
